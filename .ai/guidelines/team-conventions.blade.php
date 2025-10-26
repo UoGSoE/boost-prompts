@@ -75,6 +75,7 @@ The order of functionality in our Eloquent factories is:
 6. Custom methods
 
 This is not a hard and fast rule, but it helps us keep our code simple and readable.
+
 ### Testing style
 
 We like feature tests and rarely write unit.
@@ -88,6 +89,9 @@ We always test the existence of records using the related Eloquent model - not j
 We like our tests to be readable and easy to understand.  We always follow the 'Arrange, Act, Assert' pattern.
 
 We like to use helpful variable names in tests.  For example we might have '$userWithProject' and '$userWithoutProject' to help us understand what is going on in the assertions.
+
+When writing tests and you are getting unexpected results with assertSee or assertDontSee - consider that it might be that Laravels exception page is showing the values in the stack trace or contextual debug into.  Do a quick sanity check using an assertStatus() call or assertHasNoErrors().  If that doesn't help **ask the user for help**.  They can visit the page in the browser and tell you exactly what is happening and even provide you a screenshot.
+
 
 ### UI styling
 
