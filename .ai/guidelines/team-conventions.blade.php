@@ -38,6 +38,43 @@ When developing locally, we use a seeder called 'TestDataSeeder' to seed the dat
 
 So if you have created/modified a model or factory, please check that seeder file matches your changes.
 
+### Eloquent model class conventions
+
+We have a rough convention for the order of functionality in our Eloquent models.  This is :
+
+1. Model boilerplate (eg, the $fillable array)
+2. Lifecycle methods (eg, using the booted method to do some extra work)
+3. Relationships
+4. Scopes
+5. Accessors/Mutators
+6. Custom methods
+
+This convention makes it much easier to navigate the code and find the methods you are looking for.
+
+Also note that we like 'fat models' - helper methods, methods that make the main logic read more naturally - are all fine to put on the model.  Do not abstract to service classes without checking with the user first.  And if there are not existing service classes in the application **NEVER** introduce them unless given explicit permission by the user.
+
+### Livewire component class conventions
+
+Our conventions for livewire components are:
+
+1. Properties and attributes at the top
+1.1. Any properties which are used as filters/search parameters in the component should use the `#[Url]` livewire attribute
+2. The mount() method followed by the render() method
+3. Any lifecycle methods (such as updatedFoo()) next
+4. Any custom methods after all that.
+
+### Eloquent factory conventions
+
+The order of functionality in our Eloquent factories is:
+
+1. Model boilerplate (eg, the $fillable array)
+2. Relationships
+3. Validation
+4. Scopes
+5. Accessors
+6. Custom methods
+
+This is not a hard and fast rule, but it helps us keep our code simple and readable.
 ### Testing style
 
 We like feature tests and rarely write unit.
