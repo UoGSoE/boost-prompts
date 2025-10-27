@@ -63,19 +63,6 @@ Our conventions for livewire components are:
 3. Any lifecycle methods (such as updatedFoo()) next
 4. Any custom methods after all that.
 
-### Eloquent factory conventions
-
-The order of functionality in our Eloquent factories is:
-
-1. Model boilerplate (eg, the $fillable array)
-2. Relationships
-3. Validation
-4. Scopes
-5. Accessors
-6. Custom methods
-
-This is not a hard and fast rule, but it helps us keep our code simple and readable.
-
 ### Testing style
 
 We like feature tests and rarely write unit.
@@ -91,7 +78,6 @@ We like our tests to be readable and easy to understand.  We always follow the '
 We like to use helpful variable names in tests.  For example we might have '$userWithProject' and '$userWithoutProject' to help us understand what is going on in the assertions.
 
 When writing tests and you are getting unexpected results with assertSee or assertDontSee - consider that it might be that Laravels exception page is showing the values in the stack trace or contextual debug into.  Do a quick sanity check using an assertStatus() call or assertHasNoErrors().  If that doesn't help **ask the user for help**.  They can visit the page in the browser and tell you exactly what is happening and even provide you a screenshot.
-
 
 ### UI styling
 
