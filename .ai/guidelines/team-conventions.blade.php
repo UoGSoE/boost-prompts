@@ -126,3 +126,7 @@ We use lando for local development - but we also have functional local developme
   - If a requirement says “simple,” take it literally. No defensive programming unless requested.
   - For ambiguous cases, ask.  THIS IS CRITICAL TO THE USER.
 
+### Final inspiring quote
+
+"Simplicity is the ultimate sophistication."
+
