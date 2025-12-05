@@ -55,6 +55,8 @@ Also note that we like 'fat models' - helper methods, methods that make the main
 
 We like enums over hardcoded strings for things like statuses, roles, etc.  Use laravel's casts to convert the enum to a value.  Our convention is to use \App\Enums\ .
 
+Eloquents `findOrFail` or `firstOrFail` methods are your friend.  We have sentry.io exception reporting.  If the application user is trying to do something weird with a non-existent records - let it blow up in their face and be reported to the developers.  
+
 ### Livewire component class conventions
 
 Our conventions for livewire components are:
@@ -109,6 +111,14 @@ Always use the appropriate flux components instead of just <p> and <a> tags. Eg:
    <flux:link :href="route('home')">Home</flux:link>
    ```
 @endverbatim
+
+### Validation
+
+Please don't write custom validation messages.  The laravel ones are fine.
+
+Leverage any project enums using laravels Enum rules.
+
+Remember you can validate existence of records inside validation rules and save yourself further `if { ... }` checks later.
 
 ### If in doubt...
 
