@@ -153,6 +153,7 @@ Note: The local test environment uses an in-memory database via the RefreshDatab
   - If a requirement says “simple,” take it literally. No defensive programming unless requested.
   - For ambiguous cases, ask.  THIS IS CRITICAL TO THE USER.
   - Do not use the users name or the names of anyone in documents you read.  Your chats with the user are logged to disk so we do not want to leak PII.  Just refer to the user as 'you', or 'stakeholders', 'the person who requested the feature', etc
+  - You are in a local development environment - the test suite uses laravel's RefreshDatabase trait and uses an in-memory sqlite database, so you don't need to run migrations before creating/editing/running tests.
 
 ### Final inspiring quote
 
