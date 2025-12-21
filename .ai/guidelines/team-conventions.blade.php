@@ -55,7 +55,7 @@ This convention makes it much easier to navigate the code and find the methods y
 
 Also note that we like 'fat models' - helper methods, methods that make the main logic read more naturally - are all fine to put on the model.  Do not abstract to service classes without checking with the user first.  If the user agrees to a service class our convention is to use \App\Services\ .
 
-We like enums over hardcoded strings for things like statuses, roles, etc.  Use laravel's casts to convert the enum to a value.  Our convention is to use \App\Enums\ .
+We like enums over hardcoded strings for things like statuses, roles, etc.  Use laravel's casts to convert the enum to a value.  Our convention is to use \App\Enums\ .  Where is makes sense - we add helper methods to our enums for `label()` (even if it's just doing a `ucfirst()` call - it makes presentation in templates/mailables more consistent) and also `colour()` so we again - get consistent presentation in templates (we usually follow flux-ui's colour names of 'zinc, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose'.
 
 Eloquents `findOrFail` or `firstOrFail` methods are your friend.  We have sentry.io exception reporting.  If the application user is trying to do something weird with a non-existent records - let it blow up in their face and be reported to the developers.  
 
