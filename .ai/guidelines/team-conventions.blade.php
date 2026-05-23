@@ -1,6 +1,6 @@
 ## Developer Team Guidelines
 
-The developer team is very small - just four people.  So we have developed some guidelines to help us work together.
+The developer team is very small - just three people.  So we have developed some guidelines to help us work together.
 
 ### Code Style
 
@@ -33,6 +33,10 @@ Our applications are important but do not contain a lot of data.  So we do not w
 We like early returns and guard clauses.  Avoid nesting if statements or using `else` whereever possible.
 
 When creating a new model - please also use the `-mf` flag to generate a migration and factory at the same time.  It just saves running multiple commands so saves some tokens.  It also makes sure the newly created files are in the format that matches the version of Laravel.
+
+### Eloquent properties over attributes
+
+We have a lot of legacy applications.  They all use `protected $fillable` rather than the `#[Fillable]` attribute, for example.  We continue that convention until we decide to migrate all of the apps to the new convention.  If there are no attributes on an eloquent model - do not add them - adopt the convention in the codebase.
 
 ### Seeding data for local development
 
